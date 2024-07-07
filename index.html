@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agile Project Management Outline</title>
-    <link rel="stylesheet" href="tailwind.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Compiled CSS -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         .loader {
@@ -100,69 +100,3 @@
             const stageTitle = document.getElementById('stageTitle');
             const stageContent = document.getElementById('stageContent');
 
-            stageTitle.textContent = stageNames[stageName];
-            stageContent.innerHTML = '<div class="flex justify-center"><div class="loader"></div></div>';
-
-            if (agileStages[stageName]) {
-                renderStageContent(agileStages[stageName]);
-            } else {
-                const data = await loadJSON(stageName);
-                if (data) {
-                    agileStages[stageName] = data;
-                    renderStageContent(data);
-                } else {
-                    stageContent.innerHTML = '<p class="text-red-500">Failed to load content. Please try again later.</p>';
-                }
-            }
-        }
-
-        function renderStageContent(stageData) {
-            const stageContent = document.getElementById('stageContent');
-            if (!stageData) {
-                stageContent.innerHTML = '<p class="text-red-500">No data available for this stage.</p>';
-                return;
-            }
-
-            let html = '<ul class="space-y-4">';
-            stageData.forEach(stage => {
-                html += `
-                    <li>
-                        <h3 class="text-xl font-semibold mb-2 cursor-pointer" onclick="toggleSubStages(this)">${stage.stage}</h3>
-                        <ul class="space-y-2 hidden">
-                            ${stage.subStages.map(subStage => `
-                                <li>
-                                    <h4 class="text-lg font-medium cursor-pointer" onclick="toggleContent(this)">${subStage.name}</h4>
-                                    <ul class="list-disc list-inside ml-4 hidden">
-                                        ${subStage.content.map(item => `<li>${item}</li>`).join('')}
-                                    </ul>
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </li>
-                `;
-            });
-
-            html += '</ul>';
-            stageContent.innerHTML = html;
-        }
-
-        function toggleSubStages(element) {
-            const subStages = element.nextElementSibling;
-            subStages.classList.toggle('hidden');
-        }
-
-        function toggleContent(element) {
-            const content = element.nextElementSibling;
-            content.classList.toggle('hidden');
-        }
-
-        function clearCache() {
-            localStorage.clear();
-            alert('Cache cleared successfully.');
-        }
-
-        // Initialize the page
-        populateStageList();
-    </script>
-</body>
-</html>
