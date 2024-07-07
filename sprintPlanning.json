@@ -1,0 +1,168 @@
+{
+  "sprintPlanning": [
+    {
+      "stage": "Prepare for Sprint Planning",
+      "subStages": [
+        {
+          "name": "Review and Refine Product Backlog",
+          "content": [
+            "Ensure top backlog items are well-defined and prioritized",
+            "Break down larger items into sprint-sized stories if necessary",
+            "Update estimates based on new information",
+            "Identify any dependencies or blockers"
+          ]
+        },
+        {
+          "name": "Determine Sprint Goal",
+          "content": [
+            "Collaborate with Product Owner to define sprint objective",
+            "Ensure goal aligns with overall project vision",
+            "Make sure the goal is specific, measurable, and achievable",
+            "Document the sprint goal"
+          ]
+        },
+        {
+          "name": "Check Team Capacity",
+          "content": [
+            "Review team member availability for the sprint",
+            "Account for holidays, time off, and other commitments",
+            "Calculate total available person-hours for the sprint",
+            "Identify any skill gaps or resource constraints"
+          ]
+        },
+        {
+          "name": "Prepare Sprint Planning Agenda",
+          "content": [
+            "Create a structured agenda for the meeting",
+            "Allocate time for backlog review, capacity planning, and task breakdown",
+            "Share agenda with team members in advance",
+            "Ensure all necessary materials and tools are ready"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Conduct Sprint Planning Meeting",
+      "subStages": [
+        {
+          "name": "Review Sprint Goal and Backlog",
+          "content": [
+            "Present the sprint goal to the team",
+            "Walk through top priority backlog items",
+            "Clarify any questions about user stories or acceptance criteria",
+            "Confirm team's understanding of the work to be done"
+          ]
+        },
+        {
+          "name": "Select Sprint Backlog Items",
+          "content": [
+            "Discuss each potential sprint item",
+            "Assess item's alignment with sprint goal",
+            "Consider team capacity and velocity",
+            "Collectively decide which items to include in the sprint"
+          ]
+        },
+        {
+          "name": "Estimate Sprint Backlog Items",
+          "content": [
+            "Review or create estimates for selected items",
+            "Use planning poker or other estimation techniques",
+            "Break down larger items into smaller tasks",
+            "Ensure total estimate aligns with team capacity"
+          ]
+        },
+        {
+          "name": "Create Sprint Backlog",
+          "content": [
+            "List all selected user stories and tasks",
+            "Assign initial owners to tasks if appropriate",
+            "Identify any immediate blockers or dependencies",
+            "Visualize the sprint backlog (e.g., on a Scrum board)"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Define Sprint Execution Strategy",
+      "subStages": [
+        {
+          "name": "Identify Sprint Risks",
+          "content": [
+            "Brainstorm potential risks for the sprint",
+            "Assess likelihood and impact of each risk",
+            "Develop mitigation strategies for high-priority risks",
+            "Assign owners to monitor and manage risks"
+          ]
+        },
+        {
+          "name": "Plan Sprint Kick-off",
+          "content": [
+            "Schedule a sprint kick-off meeting",
+            "Prepare to present sprint goal and backlog to wider team",
+            "Plan team-building or motivational activities",
+            "Ensure all team members understand their roles and responsibilities"
+          ]
+        },
+        {
+          "name": "Set Up Sprint Tracking",
+          "content": [
+            "Prepare sprint burndown or burnup chart",
+            "Set up task board (physical or digital)",
+            "Establish any necessary metrics or KPIs for the sprint",
+            "Ensure all team members have access to tracking tools"
+          ]
+        },
+        {
+          "name": "Plan for Mid-Sprint Check-ins",
+          "content": [
+            "Schedule any necessary additional meetings (e.g., design reviews)",
+            "Plan for regular progress updates",
+            "Identify checkpoints for reassessing sprint goal feasibility",
+            "Establish communication channels for raising issues or blockers"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Finalize Sprint Plan",
+      "subStages": [
+        {
+          "name": "Review and Adjust Sprint Backlog",
+          "content": [
+            "Do a final review of selected sprint items",
+            "Make any necessary adjustments based on team feedback",
+            "Ensure backlog items are fully elaborated and ready for work",
+            "Confirm team commitment to the sprint plan"
+          ]
+        },
+        {
+          "name": "Document Sprint Planning Outcomes",
+          "content": [
+            "Record final sprint goal",
+            "List all sprint backlog items and their estimates",
+            "Document any key decisions or assumptions made during planning",
+            "Share sprint plan with stakeholders"
+          ]
+        },
+        {
+          "name": "Set Sprint Success Criteria",
+          "content": [
+            "Define what constitutes a successful sprint",
+            "Ensure criteria are measurable and aligned with sprint goal",
+            "Get team and Product Owner agreement on success criteria",
+            "Document and communicate success criteria"
+          ]
+        },
+        {
+          "name": "Prepare for Sprint Execution",
+          "content": [
+            "Ensure all necessary resources are available",
+            "Set up any required development environments",
+            "Confirm all team members are clear on their first tasks",
+            "Schedule recurring daily stand-up meetings"
+          ]
+        }
+      ]
+    }
+  ]
+}

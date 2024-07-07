@@ -1,0 +1,209 @@
+{
+  "createProductBacklog": [
+    {
+      "stage": "Gather Requirements",
+      "subStages": [
+        {
+          "name": "Conduct Stakeholder Interviews",
+          "content": [
+            "Prepare interview questions",
+            "Schedule meetings with key stakeholders",
+            "Conduct one-on-one or group interviews",
+            "Document and summarize interview findings"
+          ]
+        },
+        {
+          "name": "Analyze Existing Documentation",
+          "content": [
+            "Review project charter and objectives",
+            "Examine any existing design documents or prototypes",
+            "Study market research and user feedback",
+            "Identify relevant industry standards or regulations"
+          ]
+        },
+        {
+          "name": "Conduct User Research",
+          "content": [
+            "Define user research objectives",
+            "Select appropriate research methods (e.g., surveys, focus groups)",
+            "Recruit participants",
+            "Conduct research sessions and analyze results"
+          ]
+        },
+        {
+          "name": "Identify Technical Constraints",
+          "content": [
+            "Consult with development team",
+            "Review current system architecture",
+            "Identify potential technical limitations",
+            "Document technical requirements and constraints"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Create User Stories",
+      "subStages": [
+        {
+          "name": "Write User Stories",
+          "content": [
+            "Organize a user story writing workshop",
+            "Use the standard format: 'As a [user type], I want [action] so that [benefit]'",
+            "Ensure each story is independent, negotiable, valuable, estimable, small, and testable",
+            "Prioritize user stories based on business value and user needs"
+          ]
+        },
+        {
+          "name": "Define Acceptance Criteria",
+          "content": [
+            "For each user story, list specific conditions that must be met",
+            "Ensure criteria are clear, concise, and testable",
+            "Review acceptance criteria with stakeholders",
+            "Document acceptance criteria alongside user stories"
+          ]
+        },
+        {
+          "name": "Create Epic Stories",
+          "content": [
+            "Identify larger, complex features that need to be broken down",
+            "Write epic stories to capture high-level requirements",
+            "Link related user stories to epics",
+            "Prioritize epics within the product backlog"
+          ]
+        },
+        {
+          "name": "Refine and Groom User Stories",
+          "content": [
+            "Schedule regular backlog grooming sessions",
+            "Review and update existing stories",
+            "Break down larger stories into smaller, manageable pieces",
+            "Ensure stories are ready for upcoming sprints"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Prioritize Backlog Items",
+      "subStages": [
+        {
+          "name": "Determine Prioritization Criteria",
+          "content": [
+            "Define factors for prioritization (e.g., business value, user impact, risk)",
+            "Assign weights to each factor",
+            "Create a prioritization matrix",
+            "Get stakeholder agreement on prioritization approach"
+          ]
+        },
+        {
+          "name": "Conduct Prioritization Workshop",
+          "content": [
+            "Organize a workshop with key stakeholders",
+            "Present backlog items and discuss their importance",
+            "Use techniques like MoSCoW (Must have, Should have, Could have, Won't have) or relative prioritization",
+            "Document decisions and rationale"
+          ]
+        },
+        {
+          "name": "Order Backlog Items",
+          "content": [
+            "Arrange items based on prioritization results",
+            "Ensure high-priority items are well-defined and ready for development",
+            "Review order with Product Owner and get approval",
+            "Communicate prioritized backlog to the team"
+          ]
+        },
+        {
+          "name": "Continuously Refine Priorities",
+          "content": [
+            "Schedule regular backlog review sessions",
+            "Adjust priorities based on new information or changing circumstances",
+            "Ensure the top of the backlog is always ready for the next sprint",
+            "Document changes in priorities and reasons for changes"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Estimate Effort",
+      "subStages": [
+        {
+          "name": "Choose Estimation Technique",
+          "content": [
+            "Discuss estimation techniques with the team (e.g., story points, t-shirt sizes)",
+            "Agree on a common estimation scale",
+            "Document the chosen technique and guidelines",
+            "Train the team on the selected estimation method"
+          ]
+        },
+        {
+          "name": "Conduct Estimation Sessions",
+          "content": [
+            "Schedule estimation sessions (e.g., Planning Poker)",
+            "Present backlog items to the team",
+            "Facilitate discussion and estimation for each item",
+            "Record estimates and update the product backlog"
+          ]
+        },
+        {
+          "name": "Refine Estimates",
+          "content": [
+            "Review and adjust estimates as more information becomes available",
+            "Track actual effort spent on completed items",
+            "Compare estimates with actuals to improve future estimations",
+            "Update estimation guidelines based on learnings"
+          ]
+        },
+        {
+          "name": "Create Initial Release Plan",
+          "content": [
+            "Group backlog items into potential releases",
+            "Estimate timeline based on team velocity and item estimates",
+            "Identify dependencies between items and adjust grouping if necessary",
+            "Present release plan to stakeholders for feedback and approval"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Define Done Criteria",
+      "subStages": [
+        {
+          "name": "Establish Team's Definition of Done",
+          "content": [
+            "Conduct a workshop to define 'Done' criteria",
+            "Include quality standards, testing requirements, and documentation needs",
+            "Ensure alignment with organizational and project-specific requirements",
+            "Document and display the Definition of Done"
+          ]
+        },
+        {
+          "name": "Create Done Checklist",
+          "content": [
+            "Develop a checklist based on the Definition of Done",
+            "Include items such as code review, testing, documentation, and stakeholder approval",
+            "Review checklist with the team and stakeholders",
+            "Integrate checklist into the development process"
+          ]
+        },
+        {
+          "name": "Align Acceptance Criteria with Definition of Done",
+          "content": [
+            "Review user story acceptance criteria",
+            "Ensure consistency between story-specific criteria and overall Definition of Done",
+            "Adjust acceptance criteria or Definition of Done if necessary",
+            "Communicate any changes to the team"
+          ]
+        },
+        {
+          "name": "Plan for Continuous Improvement",
+          "content": [
+            "Schedule regular reviews of the Definition of Done",
+            "Collect feedback on its effectiveness",
+            "Identify areas for improvement or refinement",
+            "Update the Definition of Done as the project evolves"
+          ]
+        }
+      ]
+    }
+  ]
+}

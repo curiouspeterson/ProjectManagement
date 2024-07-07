@@ -1,0 +1,168 @@
+{
+  "sprintReview": [
+    {
+      "stage": "Prepare for Sprint Review",
+      "subStages": [
+        {
+          "name": "Organize Sprint Deliverables",
+          "content": [
+            "Compile list of completed user stories and features",
+            "Prepare demonstrations of working software",
+            "Ensure all demo environments are set up and functional",
+            "Create or update any necessary presentation materials"
+          ]
+        },
+        {
+          "name": "Invite Stakeholders",
+          "content": [
+            "Identify key stakeholders to attend the review",
+            "Send out invitations with meeting details",
+            "Include agenda and objectives of the sprint review",
+            "Confirm attendance and manage any scheduling conflicts"
+          ]
+        },
+        {
+          "name": "Review Sprint Metrics",
+          "content": [
+            "Analyze sprint burndown/burnup chart",
+            "Calculate velocity and compare to previous sprints",
+            "Compile list of completed vs. planned work",
+            "Prepare to discuss any significant deviations from the plan"
+          ]
+        },
+        {
+          "name": "Brief the Team",
+          "content": [
+            "Hold a pre-review meeting with the development team",
+            "Assign roles for the sprint review (e.g., who will demo what)",
+            "Review key points to be communicated to stakeholders",
+            "Prepare team for potential questions or feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Conduct Sprint Review Meeting",
+      "subStages": [
+        {
+          "name": "Set the Stage",
+          "content": [
+            "Welcome attendees and introduce the team",
+            "Review the agenda and objectives of the meeting",
+            "Recap the sprint goal and planned deliverables",
+            "Explain the format of the review and how feedback will be collected"
+          ]
+        },
+        {
+          "name": "Present Sprint Results",
+          "content": [
+            "Showcase completed user stories and features",
+            "Demonstrate working software or product increments",
+            "Highlight any technical achievements or innovations",
+            "Present relevant sprint metrics and performance data"
+          ]
+        },
+        {
+          "name": "Gather Feedback",
+          "content": [
+            "Encourage stakeholders to ask questions and provide feedback",
+            "Discuss any features that didn't meet expectations",
+            "Capture suggestions for improvements or modifications",
+            "Note any new ideas or requirements that emerge from the discussion"
+          ]
+        },
+        {
+          "name": "Review Product Backlog",
+          "content": [
+            "Discuss how the sprint outcomes affect the overall product backlog",
+            "Review upcoming features and priorities",
+            "Consider any necessary adjustments to the product roadmap",
+            "Identify potential items for the next sprint"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Address Incomplete Work",
+      "subStages": [
+        {
+          "name": "Discuss Unfinished Items",
+          "content": [
+            "Review any sprint backlog items that weren't completed",
+            "Explain reasons for incomplete work",
+            "Discuss impact on overall project timeline and goals",
+            "Decide whether to carry over items to the next sprint or return them to the product backlog"
+          ]
+        },
+        {
+          "name": "Identify Blockers and Challenges",
+          "content": [
+            "Highlight any significant obstacles encountered during the sprint",
+            "Discuss ongoing challenges that may affect future sprints",
+            "Brainstorm potential solutions or mitigations",
+            "Assign action items for addressing key blockers"
+          ]
+        },
+        {
+          "name": "Adjust Expectations",
+          "content": [
+            "If necessary, revise estimates for remaining work",
+            "Update stakeholders on any changes to the expected delivery timeline",
+            "Discuss any scope adjustments that may be required",
+            "Ensure alignment between stakeholder expectations and team capacity"
+          ]
+        },
+        {
+          "name": "Plan Follow-up Actions",
+          "content": [
+            "Create action items for any critical issues or feedback",
+            "Assign owners and deadlines for follow-up tasks",
+            "Schedule any necessary additional meetings or discussions",
+            "Ensure all action items are documented and tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Conclude Sprint Review",
+      "subStages": [
+        {
+          "name": "Summarize Key Outcomes",
+          "content": [
+            "Recap the main achievements of the sprint",
+            "Highlight key decisions made during the review",
+            "Summarize critical feedback received",
+            "Restate any significant changes to the product backlog or roadmap"
+          ]
+        },
+        {
+          "name": "Acknowledge Team Efforts",
+          "content": [
+            "Recognize the team's hard work and accomplishments",
+            "Highlight any exceptional contributions or problem-solving",
+            "Thank stakeholders for their participation and input",
+            "Reinforce the collaborative nature of the Agile process"
+          ]
+        },
+        {
+          "name": "Set Expectations for Next Steps",
+          "content": [
+            "Briefly preview the upcoming sprint planning session",
+            "Mention any immediate action items or follow-ups",
+            "Remind team of the upcoming sprint retrospective",
+            "Confirm the tentative date for the next sprint review"
+          ]
+        },
+        {
+          "name": "Document Review Outcomes",
+          "content": [
+            "Compile notes and key points from the review",
+            "Update sprint and product documentation as needed",
+            "Distribute summary of the sprint review to relevant stakeholders",
+            "Ensure all action items and decisions are properly recorded"
+          ]
+        }
+      ]
+    }
+  ]
+}

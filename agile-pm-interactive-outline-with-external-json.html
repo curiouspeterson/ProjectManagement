@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Project Management Outline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',  // Light green
+                        secondary: '#FF9800',  // Orange
+                        background: '#F5F5F5',  // Light grey
+                        text: '#212121',  // Dark grey
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-text">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between mb-4">
+            <h1 class="text-3xl font-bold mb-6">Agile Project Management Outline</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-xl font-semibold mb-4">Stages</h2>
+                <ul id="stageList" class="space-y-2">
+                    <!-- Stages will be populated here -->
+                </ul>
+            </div>
+            <div class="md:col-span-3 bg-white p-4 rounded shadow">
+                <h2 id="stageTitle" class="text-2xl font-semibold mb-4">Select a stage</h2>
+                <div id="stageContent">
+                    <!-- Stage content will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const agileStages = {
+            projectInitiation: null,
+            createProductBacklog: null,
+            sprintPlanning: null,
+            sprintExecution: null,
+            sprintReview: null,
+            sprintRetrospective: null,
+            continuousImprovement: null
+        };
+
+        const stageNames = {
+            projectInitiation: "Project Initiation",
+            createProductBacklog: "Create Product Backlog",
+            sprintPlanning: "Sprint Planning",
+            sprintExecution: "Sprint Execution",
+            sprintReview: "Sprint Review",
+            sprintRetrospective: "Sprint Retrospective",
+            continuousImprovement: "Continuous Improvement"
+        };
+
+        async function loadJSON(stageName) {
+            const cachedData = localStorage.getItem(stageName);
+            if (cachedData) {
+                return JSON.parse(cachedData);
+            }
+
+            try {
+                const response = await fetch(`${stageName}.json`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                localStorage.setItem(stageName, JSON.stringify(data[stageName]));
+                return data[stageName];
+            } catch (error) {
+                console.error('Error loading JSON:', error);
+                return null;
+            }
+        }
+
+        function populateStageList() {
+            const stageList = document.getElementById('stageList');
+            Object.keys(stageNames).forEach(stage => {
+                const li = document.createElement('li');
+                li.innerHTML = `<button class="w-full text-left px-2 py-1 rounded hover:bg-primary hover:text-white transition-colors duration-300" onclick="showStage('${stage}')">${stageNames[stage]}</button>`;
+                stageList.appendChild(li);
+            });
+        }
+
+        async function showStage(stageName) {
+            const stageTitle = document.getElementById('stageTitle');
+            const stageContent = document.getElementById('stageContent');
+
+            stageTitle.textContent = stageNames[stageName];
+            stageContent.innerHTML = '<div class="flex justify-center"><div class="loader"></div></div>';
+
+            if (agileStages[stageName]) {
+                renderStageContent(agileStages[stageName]);
+            } else {
+                const data = await loadJSON(stageName);
+                if (data) {
+                    agileStages[stageName] = data;
+                    renderStageContent(data);
+                } else {
+                    stageContent.innerHTML = '<p class="text-red-500">Failed to load content. Please try again later.</p>';
+                }
+            }
+        }
+
+        function renderStageContent(stageData) {
+            const stageContent = document.getElementById('stageContent');
+            if (!stageData) {
+                stageContent.innerHTML = '<p class="text-red-500">No data available for this stage.</p>';
+                return;
+            }
+
+            let html = '<ul class="space-y-4">';
+            stageData.forEach(stage => {
+                html += `
+                    <li>
+                        <h3 class="text-xl font-semibold mb-2 cursor-pointer" onclick="toggleSubStages(this)">${stage.stage}</h3>
+                        <ul class="space-y-2 hidden">
+                            ${stage.subStages.map(subStage => `
+                                <li>
+                                    <h4 class="text-lg font-medium">${subStage.name}</h4>
+                                    <ul class="list-disc list-inside ml-4">
+                                        ${subStage.content.map(item => `<li>${item}</li>`).join('')}
+                                    </ul>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </li>
+                `;
+            });
+
+            html += '</ul>';
+            stageContent.innerHTML = html;
+        }
+
+        function toggleSubStages(element) {
+            const subStages = element.nextElementSibling;
+            subStages.classList.toggle('hidden');
+        }
+
+        function clearCache() {
+            localStorage.clear();
+            alert('Cache cleared successfully.');
+        }
+
+        // Initialize the page
+        populateStageList();
+    </script>
+
+    <style>
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #4CAF50;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</body>
+</html>
