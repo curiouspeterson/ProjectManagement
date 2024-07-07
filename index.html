@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agile Project Management Outline</title>
-    <link rel="stylesheet" href="/path/to/your/tailwind.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',  // Light green
+                        secondary: '#FF9800',  // Orange
+                        background: '#F5F5F5',  // Light grey
+                        text: '#212121',  // Dark grey
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-background text-text">
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-between mb-4">
             <h1 class="text-3xl font-bold mb-6">Agile Project Management Outline</h1>
@@ -72,20 +86,17 @@
             const stageList = document.getElementById('stageList');
             Object.keys(stageNames).forEach(stage => {
                 const li = document.createElement('li');
-                li.innerHTML = `<button class="w-full text-left px-2 py-1 rounded hover:bg-blue-100 transition-colors duration-300" onclick="showStage('${stage}', this)">${stageNames[stage]}</button>`;
+                li.innerHTML = `<button class="w-full text-left px-2 py-1 rounded hover:bg-primary hover:text-white transition-colors duration-300" onclick="showStage('${stage}')">${stageNames[stage]}</button>`;
                 stageList.appendChild(li);
             });
         }
 
-        async function showStage(stageName, button) {
+        async function showStage(stageName) {
             const stageTitle = document.getElementById('stageTitle');
             const stageContent = document.getElementById('stageContent');
 
             stageTitle.textContent = stageNames[stageName];
             stageContent.innerHTML = '<div class="flex justify-center"><div class="loader"></div></div>';
-
-            document.querySelectorAll('#stageList button').forEach(btn => btn.classList.remove('bg-blue-500', 'text-white'));
-            button.classList.add('bg-blue-500', 'text-white');
 
             if (agileStages[stageName]) {
                 renderStageContent(agileStages[stageName]);
@@ -135,6 +146,11 @@
             subStages.classList.toggle('hidden');
         }
 
+        function clearCache() {
+            localStorage.clear();
+            alert('Cache cleared successfully.');
+        }
+
         // Initialize the page
         populateStageList();
     </script>
@@ -143,7 +159,7 @@
         .loader {
             border: 4px solid #f3f3f3;
             border-radius: 50%;
-            border-top: 4px solid #3498db;
+            border-top: 4px solid #4CAF50;
             width: 40px;
             height: 40px;
             animation: spin 2s linear infinite;
