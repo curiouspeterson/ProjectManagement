@@ -15,16 +15,21 @@
                         secondary: '#FF9800',  // Orange
                         background: '#F5F5F5',  // Light grey
                         text: '#212121',  // Dark grey
-                    }
+                        accent: '#82B1FF',  // New accent color
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Sans-serif'],
+                    },
                 }
             }
         }
     </script>
 </head>
-<body class="bg-background text-text">
+<body class="bg-background text-text font-sans">
     <div class="container mx-auto px-4 py-8">
-        <div class="flex justify-between mb-4">
+        <div class="flex justify-between items-center mb-4">
             <h1 class="text-3xl font-bold mb-6">Agile Project Management Outline</h1>
+            <button onclick="clearCache()" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition-colors duration-300">Clear Cache</button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div class="bg-white p-4 rounded shadow">
@@ -63,10 +68,12 @@
             continuousImprovement: "Continuous Improvement"
         };
 
-        async function loadJSON(stageName) {
-            const cachedData = localStorage.getItem(stageName);
-            if (cachedData) {
-                return JSON.parse(cachedData);
+        async function loadJSON(stageName, refresh = false) {
+            if (!refresh) {
+                const cachedData = localStorage.getItem(stageName);
+                if (cachedData) {
+                    return JSON.parse(cachedData);
+                }
             }
 
             try {
