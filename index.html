@@ -30,14 +30,23 @@
         .p-4 { padding: 1rem; }
         /* Specific styles */
         .task-item {
-            margin-bottom: 1rem; /* Add space between tasks */
+            margin-bottom: 1rem;
         }
-        .task-instructions {
+        .task-details {
             display: none;
             margin-top: 0.5rem;
             padding: 0.5rem;
             background-color: #f0f0f0;
             border-radius: 4px;
+        }
+        .task-details h4 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+        .task-details ul {
+            margin-left: 1.5rem;
+            list-style-type: disc;
         }
         /* Grid layout */
         .grid {
@@ -117,7 +126,7 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                agileData = data.AgileProjectManagementForDesignTeams;
+                agileData = data;
                 localStorage.setItem('agileData', JSON.stringify(agileData));
                 return agileData;
             } catch (error) {
@@ -130,30 +139,39 @@
         function populateStageList() {
             const stageList = document.getElementById('stageList');
             stageList.innerHTML = ''; // Clear existing content
-            agileData.forEach((stage, index) => {
+            Object.keys(agileData).forEach((stage, index) => {
                 const li = document.createElement('li');
-                li.innerHTML = `<button onclick="showStage(${index})">${stage.stage}</button>`;
+                li.innerHTML = `<button onclick="showStage('${stage}')">${stage}</button>`;
                 stageList.appendChild(li);
             });
         }
 
-        function showStage(stageIndex) {
-            const stage = agileData[stageIndex];
+        function showStage(stageName) {
+            const stage = agileData[stageName];
             const stageTitle = document.getElementById('stageTitle');
             const stageContent = document.getElementById('stageContent');
 
-            stageTitle.textContent = stage.stage;
+            stageTitle.textContent = stageName;
             stageContent.innerHTML = '';
 
-            stage.subStages.forEach(subStage => {
+            Object.entries(stage).forEach(([subStageName, tasks]) => {
                 const subStageElement = document.createElement('div');
                 subStageElement.innerHTML = `
-                    <h3>${subStage.name}</h3>
+                    <h3>${subStageName}</h3>
                     <ul>
-                        ${subStage.content.map(item => `
+                        ${tasks.map(item => `
                             <li class="task-item">
-                                <button onclick="toggleInstructions(this)">${item.task}</button>
-                                <div class="task-instructions" style="display: none;">${item.instructions}</div>
+                                <button onclick="toggleTaskDetails(this)">${item.task}</button>
+                                <div class="task-details" style="display: none;">
+                                    <h4>Instructions:</h4>
+                                    <p>${item.instructions}</p>
+                                    <h4>Approach:</h4>
+                                    <p>${item.approach}</p>
+                                    <h4>Documents:</h4>
+                                    <ul>
+                                        ${item.documents.map(doc => `<li>${doc}</li>`).join('')}
+                                    </ul>
+                                </div>
                             </li>
                         `).join('')}
                     </ul>
@@ -162,12 +180,12 @@
             });
         }
 
-        function toggleInstructions(button) {
-            const instructions = button.nextElementSibling;
-            if (instructions.style.display === "none") {
-                instructions.style.display = "block";
+        function toggleTaskDetails(button) {
+            const details = button.nextElementSibling;
+            if (details.style.display === "none") {
+                details.style.display = "block";
             } else {
-                instructions.style.display = "none";
+                details.style.display = "none";
             }
         }
 
