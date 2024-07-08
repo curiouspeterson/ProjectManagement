@@ -5,7 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agile Project Management Outline</title>
     <style>
-        /* ... (previous styles remain unchanged) ... */
+        /* Basic reset and global styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Utility classes */
+        .bg-white { background-color: white; }
+        .rounded { border-radius: 0.25rem; }
+        .shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); }
+        .mb-4 { margin-bottom: 1rem; }
+        .p-4 { padding: 1rem; }
+        /* Specific styles */
+        .task-item {
+            margin-bottom: 1rem; /* Add space between tasks */
+        }
         .task-instructions {
             display: none;
             margin-top: 0.5rem;
@@ -13,16 +39,103 @@
             background-color: #f0f0f0;
             border-radius: 4px;
         }
-        /* ... (rest of the styles remain unchanged) ... */
+        /* Grid layout */
+        .grid {
+            display: grid;
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 3fr;
+            }
+        }
+        /* Button styles */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        /* List styles */
+        ul {
+            list-style-type: none;
+        }
+        .stage-list button {
+            width: 100%;
+            text-align: left;
+            background-color: transparent;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .stage-list button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        /* Typography */
+        h1 { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
+        h2 { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+        h3 { font-size: 1.25rem; font-weight: bold; margin-top: 1rem; margin-bottom: 0.5rem; }
     </style>
 </head>
 <body>
-    <!-- ... (body content remains unchanged) ... -->
+    <div class="container">
+        <h1>Agile Project Management Outline</h1>
+        <button onclick="clearCache()" class="mb-4">Clear Cache</button>
+        <div class="grid">
+            <div class="bg-white p-4 rounded shadow">
+                <h2>Stages</h2>
+                <ul id="stageList" class="stage-list">
+                    <!-- Stages will be populated here -->
+                </ul>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h2 id="stageTitle">Select a stage</h2>
+                <div id="stageContent">
+                    <!-- Stage content will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         let agileData = null;
 
-        // ... (previous functions remain unchanged) ...
+        async function loadJSON(refresh = false) {
+            if (!refresh && agileData) {
+                return agileData;
+            }
+
+            try {
+                const response = await fetch('projectManagementData.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                agileData = data.AgileProjectManagementForDesignTeams;
+                localStorage.setItem('agileData', JSON.stringify(agileData));
+                return agileData;
+            } catch (error) {
+                console.error('Error loading JSON:', error);
+                document.getElementById('stageContent').innerHTML = `<p>Error loading data: ${error.message}</p>`;
+                return null;
+            }
+        }
+
+        function populateStageList() {
+            const stageList = document.getElementById('stageList');
+            stageList.innerHTML = ''; // Clear existing content
+            agileData.forEach((stage, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<button onclick="showStage(${index})">${stage.stage}</button>`;
+                stageList.appendChild(li);
+            });
+        }
 
         function showStage(stageIndex) {
             const stage = agileData[stageIndex];
@@ -58,8 +171,27 @@
             }
         }
 
-        // ... (rest of the script remains unchanged) ...
+        function clearCache() {
+            localStorage.removeItem('agileData');
+            agileData = null;
+            location.reload();
+        }
 
+        async function init() {
+            try {
+                agileData = await loadJSON();
+                if (agileData) {
+                    populateStageList();
+                } else {
+                    throw new Error('Failed to load data');
+                }
+            } catch (error) {
+                console.error('Initialization error:', error);
+                document.getElementById('stageContent').innerHTML = `<p>Error initializing app: ${error.message}</p>`;
+            }
+        }
+
+        init();
     </script>
 </body>
 </html>
