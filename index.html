@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agile Project Management Outline</title>
+    <title>Project Management Outline</title>
     <style>
-        /* Basic reset and global styles */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -22,13 +21,11 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        /* Utility classes */
         .bg-white { background-color: white; }
         .rounded { border-radius: 0.25rem; }
         .shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); }
         .mb-4 { margin-bottom: 1rem; }
         .p-4 { padding: 1rem; }
-        /* Specific styles */
         .task-item {
             margin-bottom: 1rem;
         }
@@ -48,7 +45,6 @@
             margin-left: 1.5rem;
             list-style-type: disc;
         }
-        /* Grid layout */
         .grid {
             display: grid;
             gap: 1rem;
@@ -58,7 +54,6 @@
                 grid-template-columns: 1fr 3fr;
             }
         }
-        /* Button styles */
         button {
             background-color: #4CAF50;
             color: white;
@@ -71,7 +66,6 @@
         button:hover {
             background-color: #45a049;
         }
-        /* List styles */
         ul {
             list-style-type: none;
         }
@@ -86,7 +80,6 @@
             background-color: #4CAF50;
             color: white;
         }
-        /* Typography */
         h1 { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
         h2 { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; }
         h3 { font-size: 1.25rem; font-weight: bold; margin-top: 1rem; margin-bottom: 0.5rem; }
@@ -94,7 +87,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Agile Project Management Outline</h1>
+        <h1>Project Management Outline</h1>
         <button onclick="clearCache()" class="mb-4">Clear Cache</button>
         <div class="grid">
             <div class="bg-white p-4 rounded shadow">
@@ -113,11 +106,11 @@
     </div>
 
     <script>
-        let agileData = null;
+        let projectData = null;
 
         async function loadJSON(refresh = false) {
-            if (!refresh && agileData) {
-                return agileData;
+            if (!refresh && projectData) {
+                return projectData;
             }
 
             try {
@@ -126,9 +119,9 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                agileData = data;
-                localStorage.setItem('agileData', JSON.stringify(agileData));
-                return agileData;
+                projectData = data;
+                localStorage.setItem('projectData', JSON.stringify(projectData));
+                return projectData;
             } catch (error) {
                 console.error('Error loading JSON:', error);
                 document.getElementById('stageContent').innerHTML = `<p>Error loading data: ${error.message}</p>`;
@@ -139,7 +132,7 @@
         function populateStageList() {
             const stageList = document.getElementById('stageList');
             stageList.innerHTML = ''; // Clear existing content
-            Object.keys(agileData).forEach((stage, index) => {
+            Object.keys(projectData).forEach((stage, index) => {
                 const li = document.createElement('li');
                 li.innerHTML = `<button onclick="showStage('${stage}')">${stage}</button>`;
                 stageList.appendChild(li);
@@ -147,7 +140,7 @@
         }
 
         function showStage(stageName) {
-            const stage = agileData[stageName];
+            const stage = projectData[stageName];
             const stageTitle = document.getElementById('stageTitle');
             const stageContent = document.getElementById('stageContent');
 
@@ -190,15 +183,15 @@
         }
 
         function clearCache() {
-            localStorage.removeItem('agileData');
-            agileData = null;
+            localStorage.removeItem('projectData');
+            projectData = null;
             location.reload();
         }
 
         async function init() {
             try {
-                agileData = await loadJSON();
-                if (agileData) {
+                projectData = await loadJSON();
+                if (projectData) {
                     populateStageList();
                 } else {
                     throw new Error('Failed to load data');
