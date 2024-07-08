@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requirements Gathering Template</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    section {
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    input[type="text"], textarea, input[type="date"] {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <form id="requirementsForm">
+    <h1>Comprehensive Requirements Template</h1>
+
+    <section>
+      <h2>Project Overview</h2>
+      <input type="text" id="projectName" placeholder="Project Name" />
+      <textarea id="projectDescription" placeholder="Project Description"></textarea>
+      <textarea id="projectObjectives" placeholder="Project Objectives"></textarea>
+      <textarea id="projectScope" placeholder="Project Scope"></textarea>
+    </section>
+
+    <section>
+      <h2>Stakeholder Information</h2>
+      <div id="stakeholders"></div>
+      <button type="button" onclick="addStakeholder()">Add Stakeholder</button>
+    </section>
+
+    <section>
+      <h2>Functional Requirements</h2>
+      <div id="functionalRequirements"></div>
+      <button type="button" onclick="addFunctionalRequirement()">Add Functional Requirement</button>
+    </section>
+
+    <section>
+      <h2>Non-Functional Requirements</h2>
+      <textarea id="performanceRequirements" placeholder="Performance Requirements"></textarea>
+      <textarea id="securityRequirements" placeholder="Security Requirements"></textarea>
+      <textarea id="usabilityRequirements" placeholder="Usability Requirements"></textarea>
+      <textarea id="reliabilityRequirements" placeholder="Reliability Requirements"></textarea>
+      <textarea id="scalabilityRequirements" placeholder="Scalability Requirements"></textarea>
+      <textarea id="complianceRequirements" placeholder="Compliance Requirements"></textarea>
+    </section>
+
+    <section>
+      <h2>Business Rules</h2>
+      <div id="businessRules"></div>
+      <button type="button" onclick="addBusinessRule()">Add Business Rule</button>
+    </section>
+
+    <section>
+      <h2>Constraints</h2>
+      <textarea id="technicalConstraints" placeholder="Technical Constraints"></textarea>
+      <textarea id="budgetConstraints" placeholder="Budget Constraints"></textarea>
+      <textarea id="timeConstraints" placeholder="Time Constraints"></textarea>
+      <textarea id="resourceConstraints" placeholder="Resource Constraints"></textarea>
+      <textarea id="legalConstraints" placeholder="Legal/Regulatory Constraints"></textarea>
+    </section>
+
+    <section>
+      <h2>Assumptions and Dependencies</h2>
+      <textarea id="assumptions" placeholder="List of Assumptions"></textarea>
+      <textarea id="internalDependencies" placeholder="Internal Dependencies"></textarea>
+      <textarea id="externalDependencies" placeholder="External Dependencies"></textarea>
+    </section>
+
+    <section>
+      <h2>Use Cases/User Stories</h2>
+      <div id="useCases"></div>
+      <button type="button" onclick="addUseCase()">Add Use Case</button>
+    </section>
+
+    <section>
+      <h2>Data Requirements</h2>
+      <textarea id="dataElements" placeholder="Data Elements"></textarea>
+      <textarea id="dataRelationships" placeholder="Data Relationships"></textarea>
+      <textarea id="dataVolume" placeholder="Data Volume"></textarea>
+      <textarea id="dataRetention" placeholder="Data Retention Requirements"></textarea>
+    </section>
+
+    <section>
+      <h2>Interface Requirements</h2>
+      <textarea id="userInterfaces" placeholder="User Interfaces"></textarea>
+      <textarea id="systemInterfaces" placeholder="System Interfaces"></textarea>
+      <textarea id="hardwareInterfaces" placeholder="Hardware Interfaces"></textarea>
+    </section>
+
+    <section>
+      <h2>Reporting Requirements</h2>
+      <div id="reportingRequirements"></div>
+      <button type="button" onclick="addReportingRequirement()">Add Reporting Requirement</button>
+    </section>
+
+    <section>
+      <h2>Security and Access Requirements</h2>
+      <textarea id="userRoles" placeholder="User Roles"></textarea>
+      <textarea id="accessLevels" placeholder="Access Levels"></textarea>
+      <textarea id="authenticationRequirements" placeholder="Authentication Requirements"></textarea>
+      <textarea id="authorizationRequirements" placeholder="Authorization Requirements"></textarea>
+    </section>
+
+    <section>
+      <h2>Performance Expectations</h2>
+      <textarea id="responseTime" placeholder="Response Time"></textarea>
+      <textarea id="throughput" placeholder="Throughput"></textarea>
+      <textarea id="capacity" placeholder="Capacity"></textarea>
+      <textarea id="availability" placeholder="Availability"></textarea>
+    </section>
+
+    <section>
+      <h2>Quality Attributes</h2>
+      <textarea id="reliability" placeholder="Reliability"></textarea>
+      <textarea id="maintainability" placeholder="Maintainability"></textarea>
+      <textarea id="portability" placeholder="Portability"></textarea>
+      <textarea id="scalability" placeholder="Scalability"></textarea>
+    </section>
+
+    <section>
+      <h2>Glossary</h2>
+      <div id="glossary"></div>
+      <button type="button" onclick="addGlossaryTerm()">Add Glossary Term</button>
+    </section>
+
+    <section>
+      <h2>Sign-off Section</h2>
+      <div id="signOff"></div>
+      <button type="button" onclick="addSignOff()">Add Sign-off</button>
+    </section>
+
+    <section>
+      <h2>Revision History</h2>
+      <div id="revisionHistory"></div>
+      <button type="button" onclick="addRevision()">Add Revision</button>
+    </section>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function createInputElement(placeholder) {
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = placeholder;
+      return input;
+    }
+
+    function createTextareaElement(placeholder) {
+      const textarea = document.createElement('textarea');
+      textarea.placeholder = placeholder;
+      return textarea;
+    }
+
+    function addStakeholder() {
+      const container = document.getElementById('stakeholders');
+      const div = document.createElement('div');
+      div.appendChild(createInputElement('Stakeholder Name'));
+      div.appendChild(createInputElement('Role/Title'));
+      div.appendChild(createInputElement('Department/Organization'));
+      div.appendChild(createInputElement('Contact Information'));
+      div.appendChild(createInputElement('Level of Influence/Interest'));
+      container.appendChild(div);
+    }
+
+    function addFunctionalRequirement() {
+      const container = document.getElementById('functionalRequirements');
+      const div = document.createElement('div');
+      div.appendChild(createInputElement('Requirement ID'));
+      div.appendChild(createTextareaElement('Requirement Description'));
+      div.appendChild(createInputElement('Priority'));
+      div.appendChild(createInputElement('Source'));
+      div.appendChild(createTextareaElement('Rationale'));
+      div.appendChild(createTextareaElement('Acceptance Criteria'));
+      container.appendChild(div);
+    }
+
+    function addBusinessRule() {
+      const container = document.getElementById('businessRules');
+      const div = document.createElement('div');
+      div.appendChild(createInputElement('Rule ID'));
+      div.appendChild(createTextareaElement('Rule Description'));
+      div.appendChild(createTextareaElement('Related Functional Requirements'));
+      container.appendChild(div);
+    }
+
+    function addUseCase() {
+      const container = document.getElementById('useCases');
+      const div = document.createElement('div');
+      div.appendChild(createInputElement('Actor/User'));
+      div.appendChild(createTextareaElement('Scenario Description'));
+      div.appendChild(createTextareaElement('Steps/Flow'));
+      div.appendChild(createTextareaElement('Expected Outcome'));
+      container.appendChild(div);
+    }
+
+    function addReportingRequirement() {
+      const container = document.getElementById('reportingRequirements');
+      const div = document.createElement('div');
+      div.appendChild(createInputElement('Report Name'));
+      div.appendChild(createTextareaElement('Purpose'));
+      div.appendChild(createTextareaElement('Key Data Elements'));
+      div.appendChild(createInputElement('Frequency'));
+      container.appendChild(div);
+    }
+
+    function addGlossaryTerm() {
+      const container = document.getElementById('glossary');
+      const div = document.createElement('div');
+      div.appendChild(createInputElement('Term'));
+      div.appendChild(createTextareaElement('Definition'));
+      container.appendChild(div);
+    }
+
+    function addSignOff() {
+      const container = document.getElementById('signOff');
+      const div = document.createElement('div');
+      div.appendChild(createInputElement('Stakeholder Name'));
+      div.appendChild(createInputElement('Role'));
+      div.appendChild(createInputElement('Signature'));
+      div.appendChild(createInputElement('Date'));
+      container.appendChild(div);
+    }
+
+    function addRevision() {
+      const container = document.getElementById('revisionHistory');
+      const div = document.createElement('div');
+      div.appendChild(createInputElement('Version Number'));
+      div.appendChild(createInputElement('Date of Change'));
+      div.appendChild(createTextareaElement('Description of Change'));
+      div.appendChild(createInputElement('Changed By'));
+      container.appendChild(div);
+    }
+
+    document.getElementById('requirementsForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+      console.log('Form submitted:', data);
+      // Add form submission logic here
+    });
+  </script>
+</body>
+</html>
