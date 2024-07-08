@@ -6,38 +6,90 @@
         {
           "name": "Identify Primary Objectives",
           "content": [
-            "Conduct stakeholder interviews",
-            "Review organizational strategy",
-            "Analyze market trends and competition",
-            "Draft initial project objectives"
-          ]
+            {
+              "task": "Conduct stakeholder interviews",
+              "instructions": "Identify key stakeholders across different departments and levels of the organization. Prepare a set of open-ended questions focusing on their expectations, concerns, and success criteria for the project. Schedule and conduct one-on-one or small group interviews. Take detailed notes and look for common themes and priorities."
+            },
+            {
+              "task": "Review organizational strategy",
+              "instructions": "Obtain the latest organizational strategy documents, such as the mission statement, vision, long-term goals, and current initiatives. Analyze these documents to understand the company's direction and priorities. Identify areas where the project can contribute to achieving these strategic goals."
+            },
+            {
+              "task": "Analyze market trends and competition",
+              "instructions": "Conduct market research using industry reports, competitor analysis, and customer feedback. Identify current trends, emerging technologies, and potential disruptions in the market. Analyze the strengths and weaknesses of key competitors. Use this information to identify opportunities and threats that may impact your project objectives."
+            },
+            {
+              "task": "Draft initial project objectives",
+              "instructions": "Based on the insights gathered from stakeholder interviews, organizational strategy review, and market analysis, draft 3-5 primary project objectives. Ensure these objectives are Specific, Measurable, Achievable, Relevant, and Time-bound (SMART). Each objective should clearly state what will be accomplished, how it will be measured, and by when."
+            }
+          ],
+          "instructions": "Begin by gathering input from key stakeholders through structured interviews. Review the organization's strategic documents to ensure alignment. Conduct a thorough market analysis, including competitor research. Use all this information to draft clear, concise project objectives that are specific, measurable, achievable, relevant, and time-bound (SMART)."
         },
         {
           "name": "Establish Measurable Success Criteria",
           "content": [
-            "Define key performance indicators (KPIs)",
-            "Set quantifiable targets for each objective",
-            "Determine measurement methods and frequency",
-            "Create a success criteria document"
-          ]
+            {
+              "task": "Define key performance indicators (KPIs)",
+              "instructions": "For each project objective, identify 2-3 KPIs that will indicate success. These should be quantifiable metrics that directly relate to the objective. Consider both leading indicators (predictive measures) and lagging indicators (outcome measures). Consult with stakeholders to ensure the chosen KPIs align with their expectations."
+            },
+            {
+              "task": "Set quantifiable targets for each objective",
+              "instructions": "For each KPI, establish a specific, numerical target that represents success. This could be a percentage increase, a specific number, or a range. Ensure these targets are challenging yet achievable based on current performance and available resources. Consider setting both minimum acceptable targets and stretch goals."
+            },
+            {
+              "task": "Determine measurement methods and frequency",
+              "instructions": "For each KPI, define how it will be measured and how often. Specify the data sources, calculation methods, and tools needed for measurement. Determine the frequency of measurement (e.g., daily, weekly, monthly) based on the nature of the KPI and the project timeline. Assign responsibility for data collection and reporting."
+            },
+            {
+              "task": "Create a success criteria document",
+              "instructions": "Compile all the information about objectives, KPIs, targets, and measurement methods into a comprehensive success criteria document. Include a brief rationale for each chosen KPI and target. Create a visual dashboard or scorecard that can be easily updated and shared with stakeholders throughout the project."
+            }
+          ],
+          "instructions": "For each project objective, identify relevant KPIs that will indicate success. Ensure each KPI has a specific, quantifiable target. Determine how each KPI will be measured and how often. Compile all this information into a comprehensive success criteria document that will serve as a reference throughout the project."
         },
         {
           "name": "Ensure Alignment with Organizational Strategy",
           "content": [
-            "Map project objectives to strategic goals",
-            "Consult with senior management",
-            "Adjust objectives if necessary",
-            "Document strategic alignment"
-          ]
+            {
+              "task": "Map project objectives to strategic goals",
+              "instructions": "Create a visual map or matrix that shows how each project objective supports one or more organizational strategic goals. Use arrows or lines to indicate direct relationships. Add brief notes explaining the nature of each relationship. This exercise may reveal gaps or redundancies in your project objectives."
+            },
+            {
+              "task": "Consult with senior management",
+              "instructions": "Schedule a meeting with senior management to review the project objectives and their alignment with organizational strategy. Prepare a clear, concise presentation of your mapping exercise. Be prepared to explain your rationale and to answer questions about how the project will contribute to strategic goals."
+            },
+            {
+              "task": "Adjust objectives if necessary",
+              "instructions": "Based on feedback from senior management, revise your project objectives as needed. This may involve refining existing objectives, adding new ones, or removing those that don't align well with organizational strategy. Ensure that any changes still result in a set of SMART objectives."
+            },
+            {
+              "task": "Document strategic alignment",
+              "instructions": "Create a formal document that clearly outlines how each project objective supports the organization's strategy. Include the visual mapping, explanations of relationships, and any revisions made based on senior management feedback. This document will serve as a key reference for justifying project decisions and maintaining strategic focus throughout the project lifecycle."
+            }
+          ],
+          "instructions": "Create a visual map showing how each project objective supports one or more organizational strategic goals. Present this mapping to senior management for review and feedback. Be prepared to adjust project objectives based on their input. Once alignment is confirmed, create a formal document detailing how the project supports the organization's strategy."
         },
         {
           "name": "Set Realistic Timelines",
           "content": [
-            "Break down objectives into milestones",
-            "Estimate time requirements for each milestone",
-            "Consider resource availability and constraints",
-            "Create a high-level project timeline"
-          ]
+            {
+              "task": "Break down objectives into milestones",
+              "instructions": "For each project objective, identify the major milestones that need to be achieved. These should be significant, measurable events in the project lifecycle. Ensure that milestones are specific and verifiable. Consider dependencies between milestones across different objectives."
+            },
+            {
+              "task": "Estimate time requirements for each milestone",
+              "instructions": "For each milestone, estimate the time required to complete it. Use historical data from similar projects if available. Consult with team members or subject matter experts for more accurate estimates. Consider using techniques like three-point estimation (optimistic, pessimistic, and most likely scenarios) to account for uncertainty."
+            },
+            {
+              "task": "Consider resource availability and constraints",
+              "instructions": "Review the availability of key resources (people, equipment, facilities) needed for each milestone. Identify any constraints, such as limited availability of specialized resources or seasonal factors. Adjust your time estimates based on these resource considerations."
+            },
+            {
+              "task": "Create a high-level project timeline",
+              "instructions": "Using the milestone estimates and resource considerations, create a high-level project timeline. This could be a Gantt chart or a simple calendar view showing major milestones and their target dates. Include some buffer time to account for unexpected delays. Ensure the overall timeline aligns with any predetermined project deadlines or constraints."
+            }
+          ],
+          "instructions": "Break down objectives into milestones. Estimate time requirements for each milestone, considering resource availability and constraints. Create a high-level project timeline that shows major milestones and their target dates, including buffer time for unexpected delays."
         }
       ]
     },
@@ -47,138 +99,90 @@
         {
           "name": "Create Stakeholder Register",
           "content": [
-            "Brainstorm potential stakeholders",
-            "Categorize stakeholders (e.g., internal, external, primary, secondary)",
-            "Document stakeholder names, roles, and contact information",
-            "Create a stakeholder register template"
-          ]
+            {
+              "task": "Brainstorm potential stakeholders",
+              "instructions": "Conduct a brainstorming session with your core project team to identify all potential stakeholders. Consider internal stakeholders (e.g., employees, departments) and external stakeholders (e.g., customers, suppliers, regulators). Use techniques like mind mapping or affinity diagrams to organize ideas."
+            },
+            {
+              "task": "Categorize stakeholders (e.g., internal, external, primary, secondary)",
+              "instructions": "Group the identified stakeholders into categories. Common categories include internal vs. external, primary (directly affected) vs. secondary (indirectly affected), and by their role (e.g., decision-makers, influencers, end-users). This categorization will help in prioritizing stakeholder engagement efforts."
+            },
+            {
+              "task": "Document stakeholder names, roles, and contact information",
+              "instructions": "For each identified stakeholder or stakeholder group, record their name, role in relation to the project, and contact information. Include any relevant notes about their potential interest or influence in the project. Ensure this information is as complete and up-to-date as possible."
+            },
+            {
+              "task": "Create a stakeholder register template",
+              "instructions": "Develop a standardized template for the stakeholder register. Include fields for name, role, contact information, category, level of influence, level of interest, preferred communication method, and any specific concerns or expectations. This template will serve as a living document throughout the project."
+            }
+          ],
+          "instructions": "Begin by brainstorming all potential stakeholders. Categorize them based on their relationship to the project. Document key information for each stakeholder. Create a standardized template for the stakeholder register that can be updated throughout the project lifecycle."
         },
         {
           "name": "Assess Stakeholder Influence and Interest",
           "content": [
-            "Develop stakeholder assessment criteria",
-            "Rate each stakeholder's influence and interest",
-            "Create a power/interest grid",
-            "Identify key stakeholders based on assessment"
-          ]
+            {
+              "task": "Develop stakeholder assessment criteria",
+              "instructions": "Define clear criteria for assessing stakeholder influence and interest. Influence could include factors like decision-making authority, control over resources, or ability to impact project success. Interest could include factors like how much the stakeholder is affected by the project or their level of engagement. Create a rating scale (e.g., 1-5 or High/Medium/Low) for each criterion."
+            },
+            {
+              "task": "Rate each stakeholder's influence and interest",
+              "instructions": "Using the defined criteria and rating scale, assess each stakeholder's level of influence and interest. This assessment should be done collaboratively with key team members who have insight into various stakeholders. Document the rationale for each rating to ensure consistency and allow for future adjustments."
+            },
+            {
+              "task": "Create a power/interest grid",
+              "instructions": "Plot each stakeholder on a two-dimensional grid with influence (power) on one axis and interest on the other. This visual representation will help identify which stakeholders require the most attention and what type of engagement strategy is appropriate for each. Use a tool like a spreadsheet or specialized stakeholder management software to create this grid."
+            },
+            {
+              "task": "Identify key stakeholders based on assessment",
+              "instructions": "Based on the power/interest grid, identify the key stakeholders who will require the most active management. Typically, these are stakeholders with high influence and high interest. However, also consider stakeholders with high influence but low interest, as they may need to be more engaged, and those with high interest but low influence, as they may be valuable advocates for the project."
+            }
+          ],
+          "instructions": "Develop clear criteria for assessing stakeholder influence and interest. Rate each stakeholder using these criteria. Create a power/interest grid to visualize stakeholder positions. Use this analysis to identify key stakeholders who will require the most active management throughout the project."
         },
         {
           "name": "Develop Stakeholder Engagement Strategy",
           "content": [
-            "Define engagement objectives for each stakeholder",
-            "Determine appropriate engagement methods",
-            "Create an engagement frequency plan",
-            "Assign team members responsible for each stakeholder"
-          ]
+            {
+              "task": "Define engagement objectives for each stakeholder",
+              "instructions": "For each key stakeholder or stakeholder group, define specific engagement objectives. These should align with the overall project objectives and address the stakeholder's interests and concerns. Objectives might include gaining support, mitigating resistance, or leveraging expertise. Ensure these objectives are SMART (Specific, Measurable, Achievable, Relevant, Time-bound)."
+            },
+            {
+              "task": "Determine appropriate engagement methods",
+              "instructions": "Based on the stakeholder's position on the power/interest grid and their engagement objectives, determine the most appropriate methods of engagement. This could range from regular face-to-face meetings for high-power, high-interest stakeholders to periodic email updates for low-power, low-interest stakeholders. Consider the stakeholder's preferences and the project's resources when selecting methods."
+            },
+            {
+              "task": "Create an engagement frequency plan",
+              "instructions": "Develop a plan that outlines how often each stakeholder should be engaged. This frequency should align with the stakeholder's importance to the project and the chosen engagement method. Create a calendar or schedule that shows when each stakeholder should be contacted or when meetings should occur. Ensure this plan is realistic given the project team's capacity."
+            },
+            {
+              "task": "Assign team members responsible for each stakeholder",
+              "instructions": "Identify which team member will be primarily responsible for managing the relationship with each key stakeholder. Consider team members' skills, existing relationships, and workload when making these assignments. Ensure that responsible team members understand their roles and have the necessary resources to effectively engage with their assigned stakeholders."
+            }
+          ],
+          "instructions": "For each key stakeholder, define specific engagement objectives that align with project goals. Determine the most appropriate methods of engagement based on the stakeholder's position and objectives. Create a plan for how often each stakeholder should be engaged. Assign team members to be responsible for managing relationships with specific stakeholders."
         },
         {
           "name": "Plan Communication Methods",
           "content": [
-            "Identify preferred communication channels for each stakeholder",
-            "Create a communication matrix",
-            "Develop templates for different types of communications",
-            "Set up initial stakeholder meetings"
-          ]
-        }
-      ]
-    },
-    {
-      "stage": "Create Project Charter",
-      "subStages": [
-        {
-          "name": "Define Project Purpose and Justification",
-          "content": [
-            "Summarize the business need",
-            "Explain the project's potential benefits",
-            "Outline the consequences of not doing the project",
-            "Get sponsor approval on the purpose statement"
-          ]
-        },
-        {
-          "name": "Outline High-Level Project Scope",
-          "content": [
-            "List major deliverables",
-            "Define project boundaries",
-            "Identify any exclusions or limitations",
-            "Create a scope statement"
-          ]
-        },
-        {
-          "name": "Identify Key Milestones and Timeline",
-          "content": [
-            "List major project phases",
-            "Set target dates for key milestones",
-            "Create a high-level project schedule",
-            "Identify any time constraints or deadlines"
-          ]
-        },
-        {
-          "name": "List Main Risks and Constraints",
-          "content": [
-            "Conduct initial risk identification session",
-            "Document high-level project constraints",
-            "Assess initial risk impact and probability",
-            "Outline preliminary risk response strategies"
-          ]
-        },
-        {
-          "name": "Specify Budget and Resource Requirements",
-          "content": [
-            "Estimate high-level project costs",
-            "Identify required resources (human, material, equipment)",
-            "Outline funding sources",
-            "Create a preliminary budget"
-          ]
-        }
-      ]
-    },
-    {
-      "stage": "Establish Design Team Roles and Responsibilities",
-      "subStages": [
-        {
-          "name": "Identify Necessary Roles",
-          "content": [
-            "List required skills and expertise",
-            "Define core team roles (e.g., UX Designer, UI Designer, Design Lead)",
-            "Identify supporting roles (e.g., User Researcher, Content Strategist)",
-            "Determine optimal team size"
-          ]
-        },
-        {
-          "name": "Define Responsibilities for Each Role",
-          "content": [
-            "Outline key responsibilities for each role",
-            "Define expected deliverables per role",
-            "Establish performance expectations",
-            "Create role description documents"
-          ]
-        },
-        {
-          "name": "Create RACI Matrix",
-          "content": [
-            "List all project activities and deliverables",
-            "Assign RACI (Responsible, Accountable, Consulted, Informed) for each item",
-            "Review and adjust assignments with team leads",
-            "Distribute and explain RACI matrix to team"
-          ]
-        },
-        {
-          "name": "Establish Reporting Structures",
-          "content": [
-            "Define team hierarchy",
-            "Establish reporting lines",
-            "Set up communication channels within the team",
-            "Create an organizational chart for the project"
-          ]
-        },
-        {
-          "name": "Plan for Team Training",
-          "content": [
-            "Assess current team skills",
-            "Identify skill gaps",
-            "Research training options",
-            "Create a training and development plan"
-          ]
+            {
+              "task": "Identify preferred communication channels for each stakeholder",
+              "instructions": "Through direct inquiry or based on previous interactions, determine each stakeholder's preferred communication channels. This could include email, phone calls, face-to-face meetings, video conferences, or formal presentations. Consider cultural preferences and any organizational communication policies that may apply."
+            },
+            {
+              "task": "Create a communication matrix",
+              "instructions": "Develop a matrix that outlines what information needs to be communicated to each stakeholder, how it will be communicated, how often, and by whom. This matrix should align with the engagement frequency plan and the stakeholders' information needs. Include columns for stakeholder name, communication method, frequency, content type, and responsible team member."
+            },
+            {
+              "task": "Develop templates for different types of communications",
+              "instructions": "Create standardized templates for various types of project communications, such as status reports, meeting agendas, and project updates. These templates should be tailored to different stakeholder groups and communication channels. Ensure that the templates are clear, concise, and include all necessary information while being easy to complete and update."
+            },
+            {
+              "task": "Set up initial stakeholder meetings",
+              "instructions": "Schedule and plan initial meetings with key stakeholders. Prepare agendas that include introducing the project, discussing the stakeholder's role and expectations, and establishing the groundwork for ongoing communication. For high-priority stakeholders, consider one-on-one meetings. For others, group meetings might be appropriate. Ensure all necessary team members are prepared and available for these initial meetings."
+            }
+          ],
+          "instructions": "Identify each stakeholder's preferred communication channels. Create a comprehensive communication matrix outlining what, how, and when information will be shared with each stakeholder. Develop standardized templates for various types of project communications. Schedule and plan initial meetings with key stakeholders to establish communication expectations and project understanding."
         }
       ]
     }

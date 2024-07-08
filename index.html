@@ -20,6 +20,14 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .task-instructions {
+            display: none;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body class="bg-background text-text font-sans">
@@ -45,42 +53,22 @@
     </div>
 
     <script>
-        const agileStages = {
-            projectInitiation: null,
-            createProductBacklog: null,
-            sprintPlanning: null,
-            sprintExecution: null,
-            sprintReview: null,
-            sprintRetrospective: null,
-            continuousImprovement: null
-        };
+        let agileData = null;
 
-        const stageNames = {
-            projectInitiation: "Project Initiation",
-            createProductBacklog: "Create Product Backlog",
-            sprintPlanning: "Sprint Planning",
-            sprintExecution: "Sprint Execution",
-            sprintReview: "Sprint Review",
-            sprintRetrospective: "Sprint Retrospective",
-            continuousImprovement: "Continuous Improvement"
-        };
-
-        async function loadJSON(stageName, refresh = false) {
-            if (!refresh) {
-                const cachedData = localStorage.getItem(stageName);
-                if (cachedData) {
-                    return JSON.parse(cachedData);
-                }
+        async function loadJSON(refresh = false) {
+            if (!refresh && agileData) {
+                return agileData;
             }
 
             try {
-                const response = await fetch(`${stageName}.json`);
+                const response = await fetch('projectManagementData.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                localStorage.setItem(stageName, JSON.stringify(data[stageName]));
-                return data[stageName];
+                agileData = data.AgileProjectManagementForDesignTeams;
+                localStorage.setItem('agileData', JSON.stringify(agileData));
+                return agileData;
             } catch (error) {
                 console.error('Error loading JSON:', error);
                 return null;
@@ -89,14 +77,59 @@
 
         function populateStageList() {
             const stageList = document.getElementById('stageList');
-            Object.keys(stageNames).forEach(stage => {
+            agileData.forEach((stage, index) => {
                 const li = document.createElement('li');
-                li.innerHTML = `<button class="w-full text-left px-2 py-1 rounded hover:bg-primary hover:text-white transition-colors duration-300" onclick="showStage('${stage}')">${stageNames[stage]}</button>`;
+                li.innerHTML = `<button class="w-full text-left px-2 py-1 rounded hover:bg-primary hover:text-white transition-colors duration-300" onclick="showStage(${index})">${stage.stage}</button>`;
                 stageList.appendChild(li);
             });
         }
 
-        async function showStage(stageName) {
+        function showStage(stageIndex) {
+            const stage = agileData[stageIndex];
             const stageTitle = document.getElementById('stageTitle');
             const stageContent = document.getElementById('stageContent');
 
+            stageTitle.textContent = stage.stage;
+            stageContent.innerHTML = '';
+
+            stage.subStages.forEach(subStage => {
+                const subStageElement = document.createElement('div');
+                subStageElement.innerHTML = `
+                    <h3 class="text-xl font-semibold mt-4 mb-2">${subStage.name}</h3>
+                    <ul class="list-disc pl-5">
+                        ${subStage.content.map(item => `
+                            <li class="mb-2">
+                                <button class="font-medium text-primary hover:text-secondary" onclick="toggleInstructions(this)">${item.task}</button>
+                                <div class="task-instructions">${item.instructions}</div>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+                stageContent.appendChild(subStageElement);
+            });
+        }
+
+        function toggleInstructions(button) {
+            const instructions = button.nextElementSibling;
+            instructions.style.display = instructions.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function clearCache() {
+            localStorage.removeItem('agileData');
+            agileData = null;
+            location.reload();
+        }
+
+        async function init() {
+            agileData = await loadJSON();
+            if (agileData) {
+                populateStageList();
+            } else {
+                document.getElementById('stageContent').innerHTML = '<p>Error loading data. Please try again later.</p>';
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>
